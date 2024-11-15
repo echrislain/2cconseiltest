@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistiques du 16 au 25 Octobre 2024</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Statistiques des Appels - Saint Denis et Saint Pierre</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -15,35 +14,45 @@
             padding: 20px;
         }
 
-        h1,
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-
         .container {
             max-width: 900px;
             margin: auto;
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        header img {
+            max-width: 250px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 15px;
         }
 
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: center;
             border: 1px solid #ddd;
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #0072C6;
             color: white;
         }
 
@@ -51,203 +60,518 @@
             background-color: #f2f2f2;
         }
 
-        tr:hover {
-            background-color: #e9e9e9;
+        .chart-container {
+            position: relative;
+            margin: 20px 0;
+            height: 300px;
         }
 
         canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .half-chart {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .analysis {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd; 
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .separator {
+            border-top: 1px solid #ddd;
             margin: 30px 0;
         }
+
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h1>Statistiques des Appels du 16 au 25 Octobre 2024</h1>
+        <header>
+            <img src="C:/Users/cessaka/Desktop/logo1.png" alt="Logo LADOM">
+        </header>
 
-        <div id="statistics-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Total Appels</th>
-                        <th>Appels Clos</th>
-                        <th>Taux de Clôture (%)</th>
-                        <th>Appels Transférés</th>
-                        <th>Appels Abandonnés</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>16/10/2024</td>
-                        <td>134</td>
-                        <td>127</td>
-                        <td>94.78</td>
-                        <td>7</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>17/10/2024</td>
-                        <td>149</td>
-                        <td>140</td>
-                        <td>93.96</td>
-                        <td>9</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>18/10/2024</td>
-                        <td>82</td>
-                        <td>74</td>
-                        <td>90.12</td>
-                        <td>2</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>21/10/2024</td>
-                        <td>155</td>
-                        <td>135</td>
-                        <td>87.10</td>
-                        <td>5</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>22/10/2024</td>
-                        <td>155</td>
-                        <td>148</td>
-                        <td>95.48</td>
-                        <td>4</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>23/10/2024</td>
-                        <td>129</td>
-                        <td>123</td>
-                        <td>95.35</td>
-                        <td>6</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>24/10/2024</td>
-                        <td>112</td>
-                        <td>109</td>
-                        <td>97.32</td>
-                        <td>3</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>25/10/2024</td>
-                        <td>95</td>
-                        <td>92</td>
-                        <td>96.84</td>
-                        <td>3</td>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h1>La Réunion - Statistiques du Centre d'Appel</h1>
+		<h2>du 15 octobre 2024 au 15 novembre 2024 </h2>
+
+        <div class="separator"></div>
+
+        <h2>Taux de Traitement des Appels Reçus</h2>
+        <table>
+            <tr>
+                <th>Délégation</th>
+                <th>Appels Reçus</th>
+                <th>Appels Traités</th>
+                <th>Taux de Traitement (%)</th>
+            </tr>
+            <tr>
+                <td>Saint Denis</td>
+                <td>2781</td>
+                <td>2686</td>
+                <td>96.59</td>
+            </tr>
+            <tr>
+                <td>Saint Pierre</td>
+                <td>323</td>
+                <td>317</td>
+                <td>98.14</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>3104</strong></td>
+                <td><strong>3003</strong></td>
+                <td><strong>96.76</strong></td>
+            </tr>
+        </table>
+
+        <div class="half-chart">
+            <div class="chart-container">
+                <canvas id="barChart2"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pieChart2"></canvas>
+            </div>
         </div>
 
-        <h2>Statistiques Globales</h2>
-        <canvas id="globalStatsChart"></canvas>
+        <div class="analysis">
+            <h3>Analyse des Taux de Traitement des Appels</h3>
+            <ul>
+                <li>Le taux global de traitement des appels reçus est de 96.76%, ce qui reflète une bonne performance des deux délégations.</li>
+                <li>Saint Pierre a un taux de traitement supérieur à Saint Denis, avec 98.14% d'appels traités.</li>
+                <li>Le taux de traitement à Saint Denis est également excellent, à 96.59%.</li>
+                <li>Ces taux indiquent une efficacité opérationnelle importante et un service de qualité pour les appelants dans les deux délégations.</li>
+            </ul>
+        </div>
 
-        <h2>Graphique des Appels par Jour</h2>
-        <canvas id="dailyStatsChart"></canvas>
+        <div class="separator"></div>
+
+        <h2>Taux d'Appels Escaladés par rapport aux Appels Reçus</h2>
+        <table>
+            <tr>
+                <th>Délégation</th>
+                <th>Appels Reçus</th>
+                <th>Appels Escaladés</th>
+                <th>Taux d'Appels Escaladés (%)</th>
+            </tr>
+            <tr>
+                <td>Saint Denis</td>
+                <td>2781</td>
+                <td>89</td>
+                <td>3.20</td>
+            </tr>
+            <tr>
+                <td>Saint Pierre</td>
+                <td>323</td>
+                <td>6</td>
+                <td>1.86</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>3104</strong></td>
+                <td><strong>95</strong></td>
+                <td><strong>3.06</strong></td>
+            </tr>
+        </table>
+
+        <div class="half-chart">
+            <div class="chart-container">
+                <canvas id="barChart1"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pieChart1"></canvas>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h3>Analyse des Taux d'Appels Escaladés</h3>
+            <ul>
+                <li>Le taux d'appels escaladés pour Saint Denis est de 3.20%, ce qui signifie que quelques appels demandent une attention supplémentaire.</li>
+                <li>Saint Pierre affiche un taux d'appels escaladés de 1.86%, indiquant une excellente gestion des appels.</li>
+                <li>Le taux global d'appels escaladés est de 3.06%, appréciable pour les deux délégations.</li>
+                <li>Ces taux suggèrent que la majorité des appels sont résolus au premier contact, ce qui est un indicateur de performance positif.</li>
+            </ul>
+        </div>
+
+        <div class="separator"></div>
+
+        <h2>Temps d'Attente et de Parole</h2>
+        <table>
+            <tr>
+                <th>Indicateur</th>
+                <th>Valeur</th>
+            </tr>
+			<tr>
+                <td>Attente moyenne</td>
+                <td>00:29</td>
+            </tr>
+			<tr>
+                <td>Temps de parole moyen</td>
+                <td>05:04</td>
+            </tr>
+            <tr>
+                <td>Attente la plus longue</td>
+                <td>06:04</td>
+            </tr>
+        </table>
+
+        <div class="analysis">
+            <h3>Analyse du Temps d'Attente et de Parole</h3>
+            <ul>
+                <li>Une attente moyenne de 29 secondes est considérée comme bonne dans l'activité d'un centre d'appels, signalant que les appels sont généralement pris en charge rapidement.</li>
+				<li>Le temps de parole moyen de 5 minutes et 4 secondes suggère que les agents prennent le temps nécessaire pour résoudre les problèmes des clients de manière approfondie.</li>		
+                <li>Le temps d'attente le plus long de 6 minutes et 4 secondes. Cela peut entraîner une frustration pour les appelants dans des situations où ils espèrent une réponse rapide. Des solutions complémentaires comme le chat permettrait aux agents de répondre à plusieurs demandes simultanément, réduisant considérablement l'attente.</li>
+            </ul>
+        </div>
+
+        <div class="separator"></div>
+
+        <h2>Données par Catégorie d'Appels</h2>
+        <table>
+            <tr>
+                <th>Catégorie</th>
+                <th>Saint Denis</th>
+                <th>Saint Pierre</th>
+            </tr>
+            <tr>
+                <td>Besoin général d'informations</td>
+                <td>1869</td>
+                <td>225</td>
+            </tr>
+            <tr>
+                <td>Suivi de dossier</td>
+                <td>786</td>
+                <td>81</td>
+            </tr>
+            <tr>
+                <td>Incident technique</td>
+                <td>46</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Réclamations</td>
+                <td>15</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Autres</td>
+                <td>62</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Partenaire</td>
+                <td>3</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <div class="half-chart">
+            <div class="chart-container">
+                <canvas id="barChart3"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pieChart3"></canvas>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h3>Analyse des Appels par Catégorie</h3>
+            <ul>
+                <li>Le besoin général d'informations représente le type d'appel le plus élevé avec 1869 appels à Saint Denis.</li>
+                <li>Les suivis de dossier suivent avec 786 appels à Saint Denis et 81 à Saint Pierre.</li>
+                <li>Les incidents techniques représentent une petite fraction des appels, ce qui suggère un bon fonctionnement des services techniques.</li>
+            </ul>
+        </div>
+
+        <div class="separator"></div>
+
+        <h2>Données Synthétisées des Appels par Dispositif</h2>
+        <table>
+            <tr>
+                <th>Dispositif</th>
+                <th>Saint Denis</th>
+                <th>Saint Pierre</th>
+            </tr>
+            <tr>
+                <td>Grand public</td>
+                <td>1943</td>
+                <td>302</td>
+            </tr>
+            <tr>
+                <td>PME</td>
+                <td>172</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>PMFP</td>
+                <td>123</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>Talent</td>
+                <td>38</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>FAO</td>
+                <td>24</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>PMSP</td>
+                <td>16</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Oraux de concours</td>
+                <td>4</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>VAE</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+        <div class="half-chart">
+            <div class="chart-container">
+                <canvas id="barChart4"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pieChart4"></canvas>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h3>Analyse des Appels par Dispositif</h3>
+            <ul>
+                <li>Le "Grand public" représente la majorité des appels avec 1943 à Saint Denis.</li>
+                <li>Les PME suivent avec 172 appels à Saint Denis et 12 à Saint Pierre, montrant une bonne utilisation de ce dispositif.</li>
+                <li>Les autres dispositifs tels que le PMFP et le Talent sont moins sollicités, indiquant le besoin d'une meilleure sensibilisation à ces services.</li>
+            </ul>
+        </div>
+
     </div>
 
     <script>
-        // Graphique des statistiques globales
-        const globalStatsContext = document.getElementById('globalStatsChart').getContext('2d');
-        const globalStatsChart = new Chart(globalStatsContext, {
+        // Histogramme pour les taux de traitement
+        const ctxBar2 = document.getElementById('barChart2').getContext('2d');
+        const barChart2 = new Chart(ctxBar2, {
             type: 'bar',
             data: {
-                labels: [
-                    'Total Appels', 'Appels Clos', 'Appels Transférés', 'Appels Abandonnés'
-                ],
+                labels: ['Saint Denis', 'Saint Pierre'],
                 datasets: [{
-                    label: 'Statistiques Globales',
-                    data: [
-                        134 + 149 + 82 + 155 + 155 + 129 + 112 + 95, // Total des appels
-                        127 + 140 + 74 + 135 + 148 + 123 + 109 + 92, // Appels clos
-                        7 + 9 + 2 + 5 + 4 + 6 + 3 + 3, // Appels transférés
-                        0 + 3 + 6 + 9 + 0 + 0 + 3 + 3 // Appels abandonnés
-                    ],
-                    backgroundColor: ['#4CAF50', '#2196F3', '#FFC107', '#F44336'],
-                    borderColor: '#fff',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Nombre d\'appels'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Catégories'
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
-            }
-        });
-
-        // Graphique des appels par jour
-        const dailyStatsContext = document.getElementById('dailyStatsChart').getContext('2d');
-        const dailyStatsChart = new Chart(dailyStatsContext, {
-            type: 'line',
-            data: {
-                labels: [
-                    '16/10', '17/10', '18/10', '21/10', '22/10', '23/10', '24/10', '25/10'
-                ],
-                datasets: [{
-                    label: 'Total Appels',
-                    data: [134, 149, 82, 155, 155, 129, 112, 95],
-                    fill: false,
-                    borderColor: '#4CAF50',
-                    tension: 0.1
-                },
-                {
-                    label: 'Appels Clos',
-                    data: [127, 140, 74, 135, 148, 123, 109, 92],
-                    fill: false,
-                    borderColor: '#2196F3',
-                    tension: 0.1
-                },
-                {
-                    label: 'Appels Transférés',
-                    data: [7, 9, 2, 5, 4, 6, 3, 3],
-                    fill: false,
-                    borderColor: '#FFC107',
-                    tension: 0.1
-                },
-                {
-                    label: 'Appels Abandonnés',
-                    data: [0, 3, 6, 9, 0, 0, 3, 3],
-                    fill: false,
-                    borderColor: '#F44336',
-                    tension: 0.1
+                    label: 'Taux de Traitement',
+                    data: [96.59, 98.14],
+                    backgroundColor: ['#0072C6', '#00A300']
                 }]
             },
             options: {
                 responsive: true,
+                plugins: {
+                    legend: { display: true },
+                    title: { display: true, text: 'Taux de Traitement des Appels (%)' }
+                },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        title: { display: true, text: 'Taux (%)' }
                     }
                 }
             }
         });
+
+        // Graphique circulaire pour les taux de traitement
+        const ctxPie2 = document.getElementById('pieChart2').getContext('2d');
+        const pieChart2 = new Chart(ctxPie2, {
+            type: 'pie',
+            data: {
+                labels: ['Saint Denis', 'Saint Pierre'],
+                datasets: [{
+                    label: 'Taux de Traitement',
+                    data: [96.59, 98.14],
+                    backgroundColor: ['#0072C6', '#00A300']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+
+        // Histogramme pour les appels escaladés
+        const ctxBar1 = document.getElementById('barChart1').getContext('2d');
+        const barChart1 = new Chart(ctxBar1, {
+            type: 'bar',
+            data: {
+                labels: ['Saint Denis', 'Saint Pierre'],
+                datasets: [{
+                    label: 'Taux d\'Appels Escaladés',
+                    data: [3.20, 1.86],
+                    backgroundColor: ['#0072C6', '#00A300']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true },
+                    title: { display: true, text: 'Taux d\'Appels Escaladés (%)' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Taux (%)' }
+                    }
+                }
+            }
+        });
+
+        // Graphique circulaire pour les appels escaladés
+        const ctxPie1 = document.getElementById('pieChart1').getContext('2d');
+        const pieChart1 = new Chart(ctxPie1, {
+            type: 'pie',
+            data: {
+                labels: ['Saint Denis', 'Saint Pierre'],
+                datasets: [{
+                    label: 'Appels Escaladés',
+                    data: [89, 6], 
+                    backgroundColor: ['#0072C6', '#00A300']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+
+        // Histogramme pour les appels par catégorie
+        const labelsCat = ['Besoin général d\'informations', 'Suivi de dossier', 'Incident technique', 'Réclamations', 'Autres', 'Partenaire'];
+        const dataSaintDenisCat = [1869, 786, 46, 15, 62, 3];
+        const dataSaintPierreCat = [225, 81, 6, 3, 7, 1];
+
+        const ctxBar3 = document.getElementById('barChart3').getContext('2d');
+        const barChart3 = new Chart(ctxBar3, {
+            type: 'bar',
+            data: {
+                labels: labelsCat,
+                datasets: [{
+                    label: 'Saint Denis',
+                    data: dataSaintDenisCat,
+                    backgroundColor: '#0072C6'
+                }, {
+                    label: 'Saint Pierre',
+                    data: dataSaintPierreCat,
+                    backgroundColor: '#00A300'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true },
+                    title: { display: true, text: 'Appels par Catégorie' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Nombre d\'Appels' }
+                    }
+                }
+            }
+        });
+
+        // Graphique circulaire pour les appels par catégorie
+        const totalCat = [1869 + 225, 786 + 81, 46 + 6, 15 + 3, 62 + 7, 3 + 1];
+        const ctxPie3 = document.getElementById('pieChart3').getContext('2d');
+        const pieChart3 = new Chart(ctxPie3, {
+            type: 'pie',
+            data: {
+                labels: labelsCat,
+                datasets: [{
+                    label: 'Appels par catégorie',
+                    data: totalCat,
+                    backgroundColor: ['#0072C6', '#00A300', '#D50000', '#FFC107', '#FFA500', '#DC143C']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+
+        // Histogramme pour les appels par dispositif
+        const labelsDevices = ['Grand public', 'PME', 'PMFP', 'Talent', 'FAO', 'PMSP', 'Oraux de concours', 'VAE'];
+        const dataDeviceSaintDenis = [1943, 172, 123, 38, 24, 16, 4, 2]; // trié par nombre d'appels
+        const dataDeviceSaintPierre = [302, 12, 17, 5, 3, 1, 1, 0];
+
+        const ctxBar4 = document.getElementById('barChart4').getContext('2d');
+        const barChart4 = new Chart(ctxBar4, {
+            type: 'bar',
+            data: {
+                labels: labelsDevices,
+                datasets: [{
+                    label: 'Saint Denis',
+                    data: dataDeviceSaintDenis,
+                    backgroundColor: '#0072C6'
+                }, {
+                    label: 'Saint Pierre',
+                    data: dataDeviceSaintPierre,
+                    backgroundColor: '#00A300'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true },
+                    title: { display: true, text: 'Appels par Dispositif' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Nombre d\'Appels' }
+                    }
+                }
+            }
+        });
+
+        // Graphique circulaire pour les données synthétisées
+        const totalDevices = [1943 + 302, 172 + 12, 123 + 17, 38 + 5, 24 + 3, 16 + 1, 4 + 1, 2 + 0];
+        const ctxPie4 = document.getElementById('pieChart4').getContext('2d');
+        const pieChart4 = new Chart(ctxPie4, {
+            type: 'pie',
+            data: {
+                labels: labelsDevices,
+                datasets: [{
+                    label: 'Appels par dispositif',
+                    data: totalDevices,
+                    backgroundColor: ['#0072C6', '#00A300', '#D50000', '#FFC107', '#FFA500', '#DC143C', '#800080', '#FF4500']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+
+        // Données Synthétisées analysées
+        // La logique pour le classement des dispositifs (du plus grand au plus petit) a déjà été intégrée dans les tableaux ci-dessus
+
     </script>
 
 </body>
-
 </html>
